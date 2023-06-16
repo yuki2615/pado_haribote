@@ -4,7 +4,7 @@
 
 import {useRouter} from 'next/navigation'
 
-export default function Login(props) {
+export default function Login(props:any) {
 
     const router = useRouter()
 
