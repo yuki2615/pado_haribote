@@ -10,38 +10,20 @@ export default function Menu_Icon(){
     const router = useRouter()
     const pathname = usePathname()
 
-    //tailwind cssのclassの中身
-    const menu_class=[
-        //日誌
-        'fixed bottom-[12px] left-[35px] h-[102px] z-48',
-
-        //カヤック
-        'fixed w-[120px] h-[120px] bottom-[66px] left-[135px] z-50 rounded-full bg-white',
-
-        //プロフィール
-        'fixed bottom-[12px] right-[35px] h-[102px] z-48'
-    ]
-
-    //メニューバー一覧
-    const menu = {
+     //メニューバー一覧
+     const menu = {
         //Imageのaltに使う
         'name' : ['日誌','カヤック','プロフィール'],
 
-        //リンク
+        //画面遷移用(next_path)と現在のパスと比べる用(now_path)
         'link' : {
-            //画面遷移用
             next_path:['/app_body/diary','/app_body/kayak','/app_body/profile'],
-            //現在のパスと比べる用
-            now_path:['diary','kayak','profile']
+            now_path:['/app_body/diary','/app_body/kayak','/app_body/profile']
         },
 
-        //アイコン
-        'icon':{
-            //通常時
-            'png' : ['/diary.png','/kayak.png','/profile.png'],
-            //開かれているとき
-            'png_on' : ['/diary_on.png','/kayak_on.png','/profile_on.png'],
-        },
+        //pngが通常時、png_onが開かれている画面の時のアイコン
+        'png' : ['/diary.png','/kayak.png','/profile.png'],
+        'png_on' : ['/diary_on.png','/kayak_on.png','/profile_on.png'],
 
         //アイコンのサイズ
         //[ 日誌 , カヤック , プロフィール ]
@@ -54,9 +36,7 @@ export default function Menu_Icon(){
     return(
         <div>
 
-            <div
-            className='fixed bottom-0 left-0 w-full h-[126px] bg-white'
-            >
+            <div className='fixed bottom-0 left-0 w-full h-[120px] bg-white flex justify-around'>
             
             {/* メニューバーを表示 */}
             {menu.name.map((value,key)=>
@@ -66,23 +46,22 @@ export default function Menu_Icon(){
             onClick = {()=>router.push(menu.link.next_path[key])}
             >
                 {/* tailwind cssの設定 */}
-                <div
+                <div className="flex flex-col items-center m-2">
+                {/* <div
                 className = { menu_class[key] } 
-                >
+                > */}
 
                 {/* アイコン */}
                 <Image
                 //表示されるアイコンの色を決める
-                src = { pathname.includes(menu.link.now_path[key]) ?
-                    menu.icon.png_on[key]
-                    :
-                    menu.icon.png[key]
+                src = { pathname == menu.link.now_path[key] ?
+                    menu.png_on[key]
+                    :menu.png[key]
                 }
                 alt = {value}
                 height={menu.size.height[key]}
                 width={menu.size.width[key]}
-
-                className={key==1?'fixed bottom-[76px] left-[145px]':''}
+                // className={key==1?'fixed bottom-[76px] left-[145px]':''}
                 />
 
                 </div>
