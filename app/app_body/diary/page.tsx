@@ -3,7 +3,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 //☆のicon
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
@@ -16,9 +16,8 @@ import { Navigation_Group,Frend_Diary } from './frend_data'
 
 
 export default function Diary(){
-
     //星が押されたか
-    const [ push_star , setPushStar ] = useState('no')
+    const [ push_star , setPushStar ] = useState(['']);
 
     return(
         <div>
@@ -75,14 +74,14 @@ export default function Diary(){
 
                         <button
                         onClick = {()=>{
-                            push_star == 'no'?
-                            setPushStar('yes')
+                            push_star[key] == 'no'?
+                            setPushStar([])
                             :
-                            setPushStar('no')
+                            setPushStar([])
                         }}
                         >
 
-                            {push_star == 'no' ?
+                            {push_star[key] == 'no' ?
                             //星が押されていない
                             <StarOutlineRoundedIcon />
                             :
