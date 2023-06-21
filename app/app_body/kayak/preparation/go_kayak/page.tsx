@@ -79,7 +79,7 @@ export default function Go_Kayak(){
                 {/* 航行開始ボタン */}
                 <div>
                     <button
-                    onClick={()=>router.push('../navigation')}
+                    onClick={()=>router.push('../navi_folder/navigation')}
                     >
                         航行開始
                     </button>

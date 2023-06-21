@@ -25,7 +25,6 @@ export default function Diary(){
 
     return(
         <div>
-            
             {/* 航行中のユーザーの表示 */}
             <div>
                 <ul>
