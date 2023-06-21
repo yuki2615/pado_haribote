@@ -4,6 +4,7 @@
 
 import Image from 'next/image'
 import { useState,useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 //☆のicon
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
@@ -16,6 +17,9 @@ import { Navigation_Group,Frend_Diary } from './frend_data'
 
 
 export default function Diary(){
+
+    const router = useRouter()
+
     //星が押されたか
     const [ push_star , setPushStar ] = useState(['']);
 
@@ -30,13 +34,19 @@ export default function Diary(){
                         <li
                         key = { key }
                         >
-                            {/* アイコンの表示 */}
-                            <Image
-                            src = { group.icon }
-                            alt = { group.name }
-                            width = { 60 }
-                            height = { 60 }
-                            />
+                            <button
+                            onClick = {()=>{
+                                router.push('./diary/map/frend_map')
+                            }}
+                            >
+                                {/* アイコンの表示 */}
+                                <Image
+                                src = { group.icon }
+                                alt = { group.name }
+                                width = { 60 }
+                                height = { 60 }
+                                />
+                            </button>
 
                             {/* グループ名の表示 */}
                             <p>
@@ -90,6 +100,8 @@ export default function Diary(){
                             }
                             
                         </button>
+
+                        {/* 写真を表示 */}
                         
 
                     </div>
