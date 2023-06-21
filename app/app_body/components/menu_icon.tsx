@@ -27,15 +27,21 @@ export default function Menu_Icon(){
         //Imageのaltに使う
         'name' : ['日誌','カヤック','プロフィール'],
 
-        //画面遷移用(next_path)と現在のパスと比べる用(now_path)
+        //リンク
         'link' : {
+            //画面遷移用
             next_path:['/app_body/diary','/app_body/kayak','/app_body/profile'],
-            now_path:['/app_body/diary','/app_body/kayak','/app_body/profile']
+            //現在のパスと比べる用
+            now_path:['diary','kayak','profile']
         },
 
-        //pngが通常時、png_onが開かれている画面の時のアイコン
-        'png' : ['/diary.png','/kayak.png','/profile.png'],
-        'png_on' : ['/diary_on.png','/kayak_on.png','/profile_on.png'],
+        //アイコン
+        'icon':{
+            //通常時
+            'png' : ['/diary.png','/kayak.png','/profile.png'],
+            //開かれているとき
+            'png_on' : ['/diary_on.png','/kayak_on.png','/profile_on.png'],
+        },
 
         //アイコンのサイズ
         //[ 日誌 , カヤック , プロフィール ]
@@ -49,7 +55,7 @@ export default function Menu_Icon(){
         <div>
 
             <div
-            className='fixed bottom-[0px] left-[0px] w-full h-[126px] bg-white'
+            className='fixed bottom-0 left-0 w-full h-[126px] bg-white'
             >
             
             {/* メニューバーを表示 */}
@@ -67,14 +73,15 @@ export default function Menu_Icon(){
                 {/* アイコン */}
                 <Image
                 //表示されるアイコンの色を決める
-                src = { pathname == menu.link.now_path[key] ?
-                    menu.png_on[key]
+                src = { pathname.includes(menu.link.now_path[key]) ?
+                    menu.icon.png_on[key]
                     :
-                    menu.png[key]
+                    menu.icon.png[key]
                 }
                 alt = {value}
                 height={menu.size.height[key]}
                 width={menu.size.width[key]}
+
                 className={key==1?'fixed bottom-[76px] left-[145px]':''}
                 />
 

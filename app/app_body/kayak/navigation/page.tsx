@@ -4,42 +4,130 @@ import Image from 'next/image'
 
 export default function Navigation(){
 
-    //映像(フロントカメラとリアカメラ)
-    const live_camera = {
-        'name' : ['フロントカメラ','リアカメラ'],
+    //表示させる情報
+    const information = {
 
-        //Imageタグで呼び出す
-        'screen' : ['/front_camera.png','/rear_camera.png'],
+        //リアカメラ
+        'rear':{
+            //情報一覧
+            'info':[
+                '気温',
+                '風向',
+                '天候'
+            ],
 
-        //tailwind cssの設定を記述
-        'setting_css' : [
-            'fixed top-[141px] left-[27px]',
-            'fixed top-[404px] left-[27px]'
-        ]
+            //情報の値
+            'info_value':[
+                '18℃',
+                '↑',
+                '曇り'
+            ]
+        },
+
+        //フロントカメラ
+        'front':{
+            //情報一覧
+            'info':[
+                '航行時間'
+            ],
+
+            //情報の値
+            'info_value':[
+                '１：０４：５６'
+            ]
+        }
+
     }
 
     return(
         <div>
-            
+
+            {/* 電話のボタン */}
+
             {/* 映像 */}
             <div>
 
-                {live_camera.screen.map((value,key)=>
-                    <div
-                    key = {key}
-                    className = {live_camera.setting_css[key]}
-                    >
+                {/* リアカメラ */}
+                <div>
 
-                        {/* 画像の挿入 */}
-                        <Image
-                        src = {value}
-                        alt = {live_camera.name[key]}
-                        width = { 339 }
-                        height = { 241 }
-                        />
+                    <Image
+                    src = '/rear_camera.png'
+                    alt = 'リアカメラ'
+                    width = { 339 }
+                    height = { 241 }
+
+                    //仮のCSS
+                    className = 'fixed top-[404px] left-[27px]'
+                    />
+
+                    {/*　状況表示 */}
+                    <div>
+                        <ul>
+
+                            {information.rear.info.map((value,key)=>
+
+                            <li
+                            key = { key }
+                            >
+
+                                <span>
+                                    {value}
+                                </span>
+
+                                <span>
+                                    {information.rear.info_value[key]}
+                                </span>
+
+                            </li>
+
+                            )}
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                {/* フロントカメラ */}
+                <div>
+                    <Image
+                    src = '/front_camera.png'
+                    alt = 'フロントカメラ'
+                    width = { 339 }
+                    height = { 241 }
+
+                    //仮のCSS
+                    className = 'fixed top-[141px] left-[27px]'
+                    />
+
+                    {/* 状況表示 */}
+                    <div>
+
+                        <ul>
+                            <li>
+                                <span>
+                                    {information.front.info}
+                                </span> 
+                                <span>
+                                    {information.front.info_value}
+                                </span>
+                            </li>
+
+                            {/* 水分図 */}
+                            <li>
+                                
+                                <Image
+                                src = '/body_water.png'
+                                alt = '体内の水分状況'
+                                width = { 179 }
+                                height = { 28 }
+                                />
+
+                            </li>
+                        </ul>
 
                     </div>
-                )}
+
+                </div>
 
             </div>
 
