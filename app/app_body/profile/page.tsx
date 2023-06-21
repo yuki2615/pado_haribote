@@ -1,7 +1,5 @@
 //プロフィールの画面
-body{
-     overflow-x: hidden;
-}
+
 import Image from 'next/image'
 
 export default function Profile(){
