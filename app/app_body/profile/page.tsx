@@ -4,6 +4,11 @@
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
+//フォロ－中
+import { Follow } from '../../follow'
+//フォロワー
+import { Follower } from '../../follower'
+
 //ログアウトのicon
 import LogoutIcon from '@mui/icons-material/Logout';
 
@@ -15,9 +20,9 @@ export default function Profile() {
         //ユーザーのアイコン
         'icon': '/icon_default.png',
         //フォロワー
-        'follower': 149,
+        'follower': Follower.length,
         //フォロー中
-        'follow': 132,
+        'follow': Follow.length,
     }
 
     return (

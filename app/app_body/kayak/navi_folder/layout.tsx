@@ -1,8 +1,12 @@
-//航行中の画面
+//航行・観覧共通のレイアウト
 
 import Image from 'next/image'
 
-export default function Navigation(){
+export default function NaviFolder_Layout({
+    children,
+  }: {
+    children: React.ReactNode
+  }){
 
     //表示させる情報
     const information = {
@@ -131,6 +135,9 @@ export default function Navigation(){
 
             </div>
 
+            {children}
+
         </div>
     )
+
 }

@@ -8,7 +8,7 @@ export const Navigation_Group = [
         'name':'HappyKayak',
         'icon':'/S_red_icon.png',
         'user':[
-            'user1',
+            'Yamada1234',
             'user2',
             'user3'
         ]
@@ -17,7 +17,7 @@ export const Navigation_Group = [
         'name':'Kayakers',
         'icon':'/O_green_icon.png',
         'user':[
-            'user1',
+            'Yamada1234',
             'user2',
             'user3',
             'user4',
@@ -29,7 +29,7 @@ export const Navigation_Group = [
         'name':'kayak252',
         'icon':'/A_purple_icon.png',
         'user':[
-            'user1',
+            'Yamada1234',
             'user2'
         ]
     },
@@ -37,7 +37,7 @@ export const Navigation_Group = [
         'name':'tanakayak',
         'icon':'/Six_blue_icon.png',
         'user':[
-            'user1',
+            'Yamada1234',
             'user2'
         ]
     }
