@@ -3,7 +3,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { useRouter , useSearchParams } from 'next/navigation'
 
 //バックボタン
 import Back_button from '../../../components/back_button'
@@ -11,6 +11,9 @@ import Back_button from '../../../components/back_button'
 export default function Frend_Map(){
 
     const router = useRouter()
+    const params = useSearchParams()
+
+    const frend_user = params.get('frend_user')
 
     return(
         <div>
@@ -31,7 +34,7 @@ export default function Frend_Map(){
 
                 <button
                 onClick = {()=>{
-                    router.push('/')
+                    router.push(`../../kayak/navi_folder/navi_viewing?frend_user=${frend_user}`)
                 }}
                 >
                     {/* カヤックのアイコン */}

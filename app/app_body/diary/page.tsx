@@ -15,13 +15,17 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 //アルバムを表示させるフレンド(Frend_Diary)
 import { Navigation_Group,Frend_Diary } from './frend_data'
 
+//フォロ－中
+import { Follow } from '../../follow'
+//フォロワー
+import { Follower } from '../../follower'
 
 export default function Diary(){
 
     const router = useRouter()
 
     //星が押されたか
-    const [ push_star , setPushStar ] = useState(['']);
+    const [ push_star , setPushStar ] = useState([-1]);
 
     return(
         <div>
@@ -35,7 +39,20 @@ export default function Diary(){
                         >
                             <button
                             onClick = {()=>{
-                                router.push('./diary/map/frend_map')
+
+                                var display_user
+
+                                //グループ内にいるフレンド(フォロー中)を検索
+                                {group.user.map(( user , index )=>{
+
+                                    Follow.indexOf(user) != -1 ?
+                                    display_user = user
+                                    :
+                                    ''
+                                })} 
+
+                                //観覧に飛ぶ
+                                router.push(`./diary/map/frend_map?frend_user=${display_user}`)
                             }}
                             >
                                 {/* アイコンの表示 */}
@@ -83,14 +100,18 @@ export default function Diary(){
 
                         <button
                         onClick = {()=>{
-                            push_star[key] == 'no'?
-                            setPushStar([])
+                            push_star.indexOf(key) == -1 ?
+                            //星が押された
+                            setPushStar([...push_star,key])
                             :
-                            setPushStar([])
+                            //星を押されていない
+                            setPushStar(
+                                push_star.filter(( star ) => ( star !== key ))
+                            )
                         }}
                         >
 
-                            {push_star[key] == 'no' ?
+                            {push_star.indexOf(key) == -1 ?
                             //星が押されていない
                             <StarOutlineRoundedIcon />
                             :

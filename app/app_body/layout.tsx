@@ -17,7 +17,7 @@ export default function AppBody_Layout({
         <Background_gray />
         {children}
         <Menu_Icon />
-    </div>
+      </div>
             
             
 
