@@ -3,7 +3,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 //☆のicon
