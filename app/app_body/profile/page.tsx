@@ -27,15 +27,15 @@ export default function Profile() {
 
     return (
         <div>
-            <div className="flex flex-now space-x-4">
+            <div className="flex flex-now mt-5">
                 {/* アカウント主のicon */}
-                <div> <Image src={user.icon} alt='アイコン' width={100} height={100} /></div>
+                <div className='mr-8'> <Image src={user.icon} alt='アイコン' width={100} height={100} /></div>
                 {/* アカウントの内容 */}
-                <div className='font-AnekGujarati text-backgray flex flex-col'>
-                    <div className="flex items-center h-full text-[27px] font-extrabold line-height-[41px]">
+                <div className='mt-6 ml-3 font-AnekGujarati text-backgray flex flex-col text-center font-extrabold'>
+                    <div className="w-full text-center text-[27px] underline">
                         {user.name}
                     </div>
-                    <div className="flex flex-row justify-end space-x-6">
+                    <div className="flex flex-row justify-end text-[11px] space-x-4">
                         <div>
                             <span>フォロワー</span>
                             <span>{user.follower}</span>
@@ -48,7 +48,7 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row justify-end space-x-6 m-2'>
+            <div className='flex flex-row justify-end space-x-6 m-2 mr-14'>
                 <div>
                     {/* プロフィール編集へ */}
                     <button style={{
@@ -68,21 +68,15 @@ export default function Profile() {
                         backgroundColor: 'rgba(221, 223, 228, 1)',
                         color: 'rgba(99, 123, 152, 1)',
                         width: '49px', height: '26px', borderRadius: '5px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
+                        display: 'flex', alignItems: 'center', justifyContent: 'center'
                     }}
                         onClick={() => {
                             router.push('/')
                         }}>
-
                         <LogoutIcon />
                     </button>
                 </div>
-                <div></div>
-
             </div>
-
             {/* 過去の航行を表示 */}
             <div>
 
