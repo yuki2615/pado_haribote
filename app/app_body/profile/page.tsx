@@ -29,13 +29,13 @@ export default function Profile() {
         <div>
             <div className="flex flex-now mt-5">
                 {/* アカウント主のicon */}
-                <div className='mr-8'> <Image src={user.icon} alt='アイコン' width={100} height={100} /></div>
+                <div className='mr-8 ml-5'> <Image src={user.icon} alt='アイコン' width={100} height={100} /></div>
                 {/* アカウントの内容 */}
                 <div className='mt-6 ml-3 font-AnekGujarati text-backgray flex flex-col text-center font-extrabold'>
                     <div className="w-full text-center text-[27px] underline">
                         {user.name}
                     </div>
-                    <div className="flex flex-row justify-end text-[11px] space-x-4">
+                    <div className="flex flex-row justify-end text-[11px] space-x-4 mt-3">
                         <div>
                             <span>フォロワー</span>
                             <span>{user.follower}</span>
@@ -48,7 +48,7 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row justify-end space-x-6 m-2 mr-14'>
+            <div className='flex flex-row justify-end space-x-6 m-2 mr-8'>
                 <div>
                     {/* プロフィール編集へ */}
                     <button style={{
@@ -85,7 +85,7 @@ export default function Profile() {
                 </div>
 
                 {/* アルバムを表示 */}
-
+ 
 
             </div>
 
