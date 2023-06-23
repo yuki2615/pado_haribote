@@ -3,12 +3,12 @@
     "short_name": "Paddroll",
     "icons": [
       {
-        "src": "/icon_default.png",
+        "src": "/icon_PWA_size192x192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "/icon_default.png",
+        "src": "/icon_PWA_size512x512.png",
         "sizes": "512x512",
         "type": "image/png"
       }
