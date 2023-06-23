@@ -36,7 +36,7 @@ export default function Index() {
       </div>
 
       {/* ログイン入力部分 */}
-      <div>
+      <div className='flex justify-center'>
 
         {/* ログインと新規登録で分ける */}
         {switching.login_signup == 'login' ?

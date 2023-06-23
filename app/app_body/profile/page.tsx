@@ -31,34 +31,35 @@ export default function Profile() {
                 {/* アカウント主のicon */}
                 <div> <Image src={user.icon} alt='アイコン' width={100} height={100} /></div>
                 {/* アカウントの内容 */}
-                <div className='font-AnekGujarati text-backgray text-[27px] font-extrabold line-height-[41px]'>
-                 <div className="flex items-center h-full">
-                    {user.name}
+                <div className='font-AnekGujarati text-backgray flex flex-col'>
+                    <div className="flex items-center h-full text-[27px] font-extrabold line-height-[41px]">
+                        {user.name}
+                    </div>
+                    <div className="flex flex-row justify-end space-x-6">
+                        <div>
+                            <span>フォロワー</span>
+                            <span>{user.follower}</span>
+                        </div>
+                        <div>
+                            <span>フォロー中</span>
+                            <span>{user.follow}</span>
+                        </div>
+                        <div></div>
+                    </div>
                 </div>
-                </div>
-            </div>
-            <div className="flex flex-row justify-end space-x-6">
-                <div>
-                    <span>フォロワー</span>
-                    <span>{user.follower}</span>
-                </div>
-                <div>
-                    <span>フォロー中</span>
-                    <span>{user.follow}</span>
-                </div>
-                <div></div>
             </div>
             <div className='flex flex-row justify-end space-x-6 m-2'>
                 <div>
                     {/* プロフィール編集へ */}
-                    <button style={{ 
-                        backgroundColor: 'rgba(221, 223, 228, 1)', 
+                    <button style={{
+                        backgroundColor: 'rgba(221, 223, 228, 1)',
                         color: 'rgba(99, 123, 152, 1)', fontSize: '11px', fontFamily: 'Anek Gujarati',
                         width: '123px', height: '26px', borderRadius: '5px'
-                    }}  
-                        onClick={() => { 
-                            router.push('./profile/profile_edit') }}>
-                    プロフィールを編集
+                    }}
+                        onClick={() => {
+                            router.push('./profile/profile_edit')
+                        }}>
+                        プロフィールを編集
                     </button>
                 </div>
                 <div>
@@ -72,9 +73,10 @@ export default function Profile() {
                         justifyContent: 'center'
                     }}
                         onClick={() => {
-                            router.push('/')}}>
+                            router.push('/')
+                        }}>
 
-                    <LogoutIcon />
+                        <LogoutIcon />
                     </button>
                 </div>
                 <div></div>
