@@ -18,9 +18,6 @@ export default function Frend_Map(){
     return(
         <div>
 
-            {/* バックボタンの表示 */}
-            <Back_button />
-
             {/* 地図を表示 */}
             <div>
 

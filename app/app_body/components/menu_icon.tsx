@@ -109,9 +109,9 @@ export default function Menu_Icon(){
                         setNaviStop('no')
 
                         pathname.includes('navigation') == true ?
-                        router.push('../../diary/map/today_map')
+                        router.push('../../diary/map/today_map?next_path=diary')
                         :
-                        router.push('../../diary/map/frend_map')
+                        router.push('../../diary/map/frend_map?next_path=diary')
                     }}
                     >
                         はい
