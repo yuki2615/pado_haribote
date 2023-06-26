@@ -16,6 +16,6 @@
     "start_url": "https://pado-haribote.vercel.app/",
     "scope":"/",
     "display": "standalone",
-    "theme_color": "#ffffff",
+    "theme_color": "#fc9114",
     "background_color": "#ffffff"
   }
