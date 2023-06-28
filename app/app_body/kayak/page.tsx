@@ -57,7 +57,7 @@ export default function Kayak(){
                 <div>
                     <input
                     type='text'
-                    value='IDを入力してください'
+                    placeholder='IDを入力してください'
                     />
 
                     <div>
