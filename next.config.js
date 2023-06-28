@@ -1,15 +1,18 @@
-/** @type {import('next').NextConfig} */
+const {
+  PHASE_PRODUCTION_BUILD
+} = require('next/constants');
 
-//PWAの対応
-const runtimeCaching = require("next-pwa/cache");
-const withPWA = require("next-pwa")({
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-    runtimeCaching,
-});
+/** @type {import("next").NextConfig} */
+const nextConfig = {
+  reactStrictMode: true
+};
 
-const nextConfig = withPWA({
-    // next config
-});
-module.exports = nextConfig;
+module.exports = (phase) => {
+  if (phase === PHASE_PRODUCTION_BUILD) {
+    const withPWA = require('@ducanh2912/next-pwa').default({
+      dest: 'public',
+    });
+    return withPWA(nextConfig);
+  }
+  return nextConfig;
+};

@@ -31,7 +31,7 @@ export default function Login(props: any) {
                         <input
                             className='w-[274px] h-[30px] border border-gray-300 rounded-md text-[#DDDFE4] text-center my-2'
                             type='text'
-                            value={value}
+                            placeholder={value}
                             style={{ borderColor: 'rgba(221, 223, 228, 1)', backgroundColor: 'transparent'}}
                         />
 

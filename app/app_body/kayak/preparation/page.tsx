@@ -51,7 +51,7 @@ export default function Preparation(){
                 <div>
                     <input
                     type='text'
-                    value='グループ名を入力してください'
+                    placeholder='グループ名を入力してください'
                     />
                 </div>
 
@@ -69,8 +69,8 @@ export default function Preparation(){
                 <div>
                     <span>参加人数</span>
                     <input
-                    type='nubmer'
-                    value={8}
+                    type='number'
+                    placeholder='8'
                     />
                     <span>
                         名
@@ -81,7 +81,7 @@ export default function Preparation(){
                 <div>
                     <input
                     type='text'
-                    value='ユーザーネームを入力してください'
+                    placeholder='ユーザーネームを入力してください'
                     />
                     <button>
                         確定
