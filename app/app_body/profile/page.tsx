@@ -3,7 +3,7 @@
 
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import {useState} from 'react'
+import { useState } from 'react'
 
 
 //フォロ－中
@@ -17,7 +17,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 export default function Profile() {
     const [showContent, setShowContent] = useState(false)
     const [buttonImage, setButtonImage] = useState('/downbutton.png')
-    const handleButtonClick =() => {
+    const handleButtonClick = () => {
         setShowContent(!showContent)
         setButtonImage(showContent ? '/doenbutton.png' : '/upbutton.png')
     }
@@ -33,6 +33,14 @@ export default function Profile() {
         'follow': Follow.length,
     }
 
+    const dates = ['2023-05-22', '2022-10-25', '2022-07-24', '2021-08-08']
+    const className = 'ml-9 mt-1.5 Rectangle86 w-[157px] rounded border text-center border-border_line text-border_line text-[11px] font-semibold'
+
+    const elements = dates.map((date, index) => (
+        <div key={index}>
+            <div className={className}>{date}の航行</div>
+        </div>
+    ))
     return (
         <div>
             <div className="flex flex-now mt-5">
@@ -91,7 +99,7 @@ export default function Profile() {
             <div className="mt-5 Line15 w-full border text-backgray"></div>
             {/* 過去の航行を表示 */}
             <div className='overflow-y-auto h-full ...'>
-                <div className='mt-5 ml-4 text-backgray font-AnekGujarati text-[15px] font-extrabold'>
+                <div className='mt-4 ml-4 text-backgray font-AnekGujarati text-[15px] font-extrabold'>
                     過去の航行
                 </div>
 
@@ -104,10 +112,17 @@ export default function Profile() {
                         </button>
                         </div>
                     </div>
-                    {showContent && ( <div className='ml-4 Rectangle84 w-[340px] h-[78px] bg-backgray rounded-b relative overflow-y-auto  ...' >
-                        <div className='ml-3 mt-1.5 text-center absolute w-[93px] h-[65px] border'> <p>写真</p> </div>
-                     </div>)}
-                </div>   
+                    {showContent && (<div className='ml-4 Rectangle84 w-[340px] h-[78px] bg-backgray rounded-b relative overflow-hidden' >
+                        <div className='flex flex-row'>
+                            <div className='ml-3 mt-1.5 text-center w-[93px] h-[65px] border'> <p>写真</p> </div>
+                            <div className='overflow-y-auto h-[78px]'>
+                                <div className='flex flex-col mb-1.5'>
+                                    {elements}
+                                </div>
+                            </div>
+                        </div>
+                    </div>)}
+                </div>
             </div>
 
         </div>
