@@ -2,21 +2,33 @@
 
 'use client'
 
-import {useRouter} from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
-export default function Signup(props:any){
+export default function Signup(props: any) {
 
     const router = useRouter()
 
     //アカウント登録時必要な情報
-    const info=[
-        'ユーザーネームを登録してください',
-        'メールアドレスを登録してください',
-        'パスワードを登録してください',
-        'パスワードを再度入力してください'
+    const info = [
+        {
+            label: 'ユーザーネームを登録してください',
+            placeholder: 'ユーザーネーム',
+          },
+          {
+            label: 'メールアドレスを登録してください',
+            placeholder: 'メールアドレス',
+          },
+          {
+            label: 'パスワードを登録してください',
+            placeholder: 'パスワード',
+          },
+          {
+            label: 'パスワードを再度入力してください',
+            placeholder: 'パスワード確認',
+          },
     ]
 
-    return(
+    return (
         <div>
 
             {/* アカウントの情報を入力 */}
@@ -28,12 +40,8 @@ export default function Signup(props:any){
                     <div
                         key={key}
                     >
-
-                        <input
-                            type='text'
-                            value = {value}
-                        />
-
+                        <label htmlFor={`input-${key}`}>{value.label}</label>
+                        <input type="text" id={`input-${key}`} placeholder={value.placeholder} />
                     </div>
 
                 )}
@@ -45,7 +53,7 @@ export default function Signup(props:any){
 
                 {/* 押したらホーム画面に飛ばす */}
                 <button
-                onClick={()=>router.push('./app_body/kayak')}
+                    onClick={() => router.push('./app_body/kayak')}
                 >
                     登録
                 </button>
@@ -54,7 +62,7 @@ export default function Signup(props:any){
             {/* ログインに戻るボタン */}
             <div>
                 <button
-                onClick={props.to_login}
+                    onClick={props.to_login}
                 >
                     ログイン
                 </button>

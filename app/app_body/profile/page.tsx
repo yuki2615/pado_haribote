@@ -66,7 +66,8 @@ export default function Profile() {
                     }}
                         onClick={() => {
                             router.push('./profile/profile_edit')
-                        }}>
+                        }}
+                        title='プロフィールを編集'>
                         プロフィールを編集
                     </button>
                 </div>
@@ -80,7 +81,8 @@ export default function Profile() {
                     }}
                         onClick={() => {
                             router.push('/')
-                        }}>
+                        }}
+                        title="ログアウト">
                         <LogoutIcon />
                     </button>
                 </div>
@@ -95,14 +97,16 @@ export default function Profile() {
 
                 {/* アルバムを表示 */}
                 <div>
-                    <div className='ml-4 mt-2 Rectangle84 w-[340px] h-[26px] bg-backgray rounded flex flex-row'>
+                    <div className={`ml-4 mt-2 Rectangle84 w-[340px] h-[26px] bg-backgray flex flex-row${showContent ? ' border-b border-border_line rounded-t' : ' border-b-0 rounded'}`}>
                         <div className='ml-2 text-border_line font-AnekGujarati font-extrabold text-[15px]'>HappyKayaks</div>
-                        <div><button id="toggleButton" className="button" onClick={handleButtonClick}>
+                        <div><button id="toggleButton" className="button" onClick={handleButtonClick} title="もっと表示">
                             <Image src={buttonImage} alt="Button" id="buttonImage" width={10} height={10} className='ml-2' />
                         </button>
                         </div>
                     </div>
-                    {showContent && ( <div className='ml-4 Rectangle84 w-[340px] h-[78px] bg-backgray rounded' ></div>)}
+                    {showContent && ( <div className='ml-4 Rectangle84 w-[340px] h-[78px] bg-backgray rounded-b relative overflow-y-auto  ...' >
+                        <div className='ml-3 mt-1.5 text-center absolute w-[93px] h-[65px] border'> <p>写真</p> </div>
+                     </div>)}
                 </div>   
             </div>
 
