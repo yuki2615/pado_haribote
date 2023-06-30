@@ -67,9 +67,9 @@ export default function Profile_Edit() {
                     <div>
                         <button
                             onClick={() => {
-                                router.push('../profile') 
+                                router.push('../profile')
                             }}
-                            className = 'bg-border_line text-backgray w-[69px] h-[27px] rounded shadow'
+                            className='bg-border_line text-backgray w-[69px] h-[27px] rounded shadow'
                             aria-label='保存'
                         >
                             保存
@@ -80,7 +80,7 @@ export default function Profile_Edit() {
                             onClick={() => {
                                 router.push('/')
                             }}
-                            className = 'bg-backgray text-border_line w-[69px] h-[27px] rounded shadow'
+                            className='bg-backgray text-border_line w-[69px] h-[27px] rounded shadow'
                             aria-label='破棄'
                         >
                             破棄
@@ -90,14 +90,14 @@ export default function Profile_Edit() {
             </div>
 
             {/* 情報表示 */}
-            <div className = 'text-backgray ml-5 font-bold'>
+            <div className='text-backgray ml-5 font-bold'>
 
                 {/* ユーザーネーム */}
                 <div>
-                    <div className = 'text-[14px]'>
+                    <div className='text-[14px]'>
                         ユーザーネーム
                     </div>
-                    <div className = 'text-[18px]'>
+                    <div className='text-[18px]'>
                         {user.name}
                     </div>
                     <div className="w-[342px] border text-backgray"></div>
@@ -132,22 +132,24 @@ export default function Profile_Edit() {
 
             {/* 家族のリンク先 */}
             <div>
-                <p>
-                    Family link
-                </p>
+                <div className='text-backgray font-bold my-4 ml-5'>
+                    <div>
+                        Family link
+                    </div>
 
-                {/* 登録するところ */}
-                <div>
-                    <label htmlFor="family-email-input">登録するご家族のメールアドレスを入力してください</label>
-                    <input
-                        type='text'
-                        id='family-email-input'
-                        value='登録するご家族のメールアドレスを入力してください'
-                    />
-
-                    <button>
-                        登録
-                    </button>
+                    {/* 登録するところ */}
+                    <div className='w-[343px] h-11 border-2 rounded'>
+                        <div className='text-center mt-2'>
+                        <input
+                            type='text'
+                            placeholder={'登録するご家族のメールアドレスを入力してください'}
+                            style={{ borderColor: 'rgba(221, 223, 228, 1)', backgroundColor: 'transparent' }}
+                        />
+                        <button className='text-border_line ml-6 bg-backgray w-[35px] h-[21px] text-center rounded text-[11px]'>
+                            登録
+                        </button>
+                        </div>
+                    </div>
                 </div>
 
                 {/* 家族の連絡先一覧を表示 */}
