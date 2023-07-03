@@ -14,7 +14,7 @@ export default function Kayak(){
     const [join,setJoin] = useState('no')
 
     return(
-        <div>
+        <div className='relative'>
             
             {/* 画像の挿入 */}
             <Image
@@ -54,13 +54,14 @@ export default function Kayak(){
                 {/* 参加押す→ID入力 */}
                 {join=='no'?
                 <div></div>:
-                <div>
+                <div   className = 'absolute top-20 ml-4 text-center w-[353px] h-[213px] bg-backblue rounded-2xl border-4 border-backgray'>
                     <input
+                    className='mt-9 w-[259px] h-[48px] border-2 bg-white border-backgray rounded'
                     type='text'
-                    placeholder='IDを入力してください'
+                    placeholder='   IDを入力してください'
                     />
 
-                    <div>
+                    <div className='mt-12 ml-28 w-[130px] h-[42px] bg-backgray rounded text-border_line font-extrabold pt-3'>
                         <button
                         onClick={()=>router.push('./kayak/preparation/go_kayak')}
                         >

@@ -17,7 +17,7 @@ module.exports = {
       }
     },
     colors:{
-      white:'rgba(255,255,255,1)',
+      white:'rgba(246, 246, 246, 1)',
       backgray:'rgba(221, 223, 228, 1)',
       backblue:'rgba(146, 168, 193, 1)',
       border_line:'rgba(99, 123, 152, 1)'

@@ -138,53 +138,55 @@ export default function Profile_Edit() {
                     </div>
 
                     {/* 登録するところ */}
-                    <div className='w-[343px] h-11 border-2 rounded'>
-                        <div className='text-center mt-2'>
-                        <input
-                            type='text'
-                            placeholder={'登録するご家族のメールアドレスを入力してください'}
-                            style={{ borderColor: 'rgba(221, 223, 228, 1)', backgroundColor: 'transparent' }}
-                        />
-                        <button className='text-border_line ml-6 bg-backgray w-[35px] h-[21px] text-center rounded text-[11px]'>
-                            登録
-                        </button>
+                    <div className='w-[343px] h-11 bg-backgray rounded'>
+                        <div className='text-center pt-2'>
+                            <input
+                                className='bg-backgray w-70'
+                                type='text'
+                                placeholder={'ご家族のメールアドレスを入力'}
+                            />
+                            <button className='ml-3 bg-border_line text-backgray w-[35px] h-[21px] text-center rounded text-[11px]'>
+                                登録
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 {/* 家族の連絡先一覧を表示 */}
-                <div>
-                    <ul>
+                <div className='w-[343px] h-[155px]  bg-backgray rounded ml-5'>
+                    <div>
+                        <ul>
 
-                        {family_link.map((family, key) =>
-                            <li
-                                key={key}
-                            >
+                            {family_link.map((family, key) =>
+                                <li
+                                    key={key}
+                                >
+                                    <div className='flex flex-row text-border_line p-2.5 justify-around'>
+                                        {/* アイコン */}
+                                        <Image
+                                            src={family.icon}
+                                            alt={family.mail}
+                                            width={30}
+                                            height={30}
+                                        />
 
-                                {/* アイコン */}
-                                <Image
-                                    src={family.icon}
-                                    alt={family.mail}
-                                    width={30}
-                                    height={30}
-                                />
+                                        {/* メールアドレス */}
+                                        <span>
+                                            {family.mail}
+                                        </span>
 
-                                {/* メールアドレス */}
-                                <span>
-                                    {family.mail}
-                                </span>
+                                        {/* 削除アイコン */}
+                                        <button aria-label='削除'>
 
-                                {/* 削除アイコン */}
-                                <button aria-label='削除'>
+                                            <HighlightOffIcon />
 
-                                    <HighlightOffIcon />
+                                        </button>
+                                    </div>
+                                </li>
+                            )}
 
-                                </button>
-
-                            </li>
-                        )}
-
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
 
             </div>
