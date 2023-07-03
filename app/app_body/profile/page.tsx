@@ -96,7 +96,7 @@ export default function Profile() {
                 </div>
 
             </div>
-            <div className="mt-5 Line15 w-full border text-backgray"></div>
+            <div className="mt-5 w-full border text-backgray"></div>
             {/* 過去の航行を表示 */}
             <div className='overflow-y-auto h-full ...'>
                 <div className='mt-4 ml-4 text-backgray font-AnekGujarati text-[15px] font-extrabold'>
@@ -105,14 +105,14 @@ export default function Profile() {
 
                 {/* アルバムを表示 */}
                 <div>
-                    <div className={`ml-4 mt-2 Rectangle84 w-[340px] h-[26px] bg-backgray flex flex-row${showContent ? ' border-b border-border_line rounded-t' : ' border-b-0 rounded'}`}>
+                    <div className={`ml-4 mt-2 w-[340px] h-[26px] bg-backgray flex flex-row${showContent ? ' border-b border-border_line rounded-t' : ' border-b-0 rounded'}`}>
                         <div className='ml-2 text-border_line font-AnekGujarati font-extrabold text-[15px]'>HappyKayaks</div>
                         <div><button id="toggleButton" className="button" onClick={handleButtonClick} title="もっと表示">
                             <Image src={buttonImage} alt="Button" id="buttonImage" width={10} height={10} className='ml-2' />
                         </button>
                         </div>
                     </div>
-                    {showContent && (<div className='ml-4 Rectangle84 w-[340px] h-[78px] bg-backgray rounded-b relative overflow-hidden' >
+                    {showContent && (<div className='ml-4 w-[340px] h-[78px] bg-backgray rounded-b relative overflow-hidden' >
                         <div className='flex flex-row'>
                             <div className='ml-3 mt-1.5 text-center w-[93px] h-[65px] border'> <p>写真</p> </div>
                             <div className='overflow-y-auto h-[78px]'>
