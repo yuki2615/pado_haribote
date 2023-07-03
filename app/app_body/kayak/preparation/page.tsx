@@ -50,9 +50,9 @@ export default function Preparation() {
                 {/* グループ名入力 */}
                 <div>
                     <input
-                        className='mt-4 ml-12 bg-backgray border-2 border-border_line w-[250px] h-10 rounded'
+                        className='mt-4 ml-12 bg-backgray border-2 border-border_line w-[250px] h-10 rounded text-center'
                         type='text'
-                        placeholder='  グループ名を入力してください'
+                        placeholder='グループ名を入力'
                     />
                 </div>
 
@@ -67,69 +67,77 @@ export default function Preparation() {
                 </div>
 
                 {/* 参加人数入力 */}
-                <div className='text-border_line flex flex-row mt-2 ml-20 space-x-4 font-extrabold'>
+                <div className='text-border_line flex flex-row mt-2 ml-20 space-x-4 font-extrabold text-[15px]'>
                     <div>参加人数</div>
                     <input
-                        className='w-8 bg-backgray border-2 border-border_line rounded'
+                        className='w-8 h-5 bg-backgray border-2 border-border_line rounded'
                         type='number'
-                        placeholder='   8'
+                        placeholder='     8'
                     />
-                    <div>
-                        名
-                    </div>
+                    <div>名</div>
                 </div>
 
                 {/* 追加するユーザーネームを入力 */}
-                <div>
-                    <input
-                    className='fkex'
-                        type='text'
-                        placeholder='ユーザーネームを入力してください'
-                    />
-                    <button>
-                        確定
-                    </button>
+                <div className='ml-9 mt-9 flex flex-row border-2 w-[285px] h-[49px] border-border_line text-backgray rounded'>
+                    <div>
+                        <input
+                            className='bg-backgray w-60 text-center mt-3'
+                            type='text'
+                            placeholder='ユーザーネームを入力'
+                        />
+                    </div>
+                    <div>
+                        <button
+                            className='w-9 h-[17px] bg-border_line rounded mt-4 text-[11px]'>
+                            追加
+                        </button>
+                    </div>
                 </div>
 
                 {/* ユーザー一覧 */}
                 <div>
+                    <div className='border-2 border-border_line rounded w-[285px] h-[212px]'>
+                        {/* 自分(ホストユーザー)を表示 */}
+                        <div className='flex flex-row space-x-6'>
+                            {/* 自分のアイコン */}
+                            <div>
+                                <Image
+                                    src={host_user.icon}
+                                    alt='my_icon'
+                                    height={30}
+                                    width={30}
+                                />
+                            </div>
+                            {/* 自分のユーザーネーム */}
+                            <div>
+                                {host_user.name}
+                            </div>
+                        </div>
 
-                    {/* 自分(ホストユーザー)を表示 */}
-                    <div>
-                        {/* 自分のアイコン */}
-                        <Image
-                            src={host_user.icon}
-                            alt='my_icon'
-                            height={30}
-                            width={30}
-                        />
-                        {/* 自分のユーザーネーム */}
-                        <span>
-                            {host_user.name}
-                        </span>
-                    </div>
-
-                    {/* 参加するユーザーの一覧 */}
-                    <div>
-                        <ul>
-                            {user_list.icon.map((value, key) =>
-                                <li
-                                    key={key}
-                                >
-                                    <span>
-                                        <Image
-                                            src={value}
-                                            alt={user_list.name[key]}
-                                            height={32}
-                                            width={30}
-                                        />
-                                    </span>
-                                    <span>
-                                        {user_list.name[key]}
-                                    </span>
-                                </li>
-                            )}
-                        </ul>
+                        {/* 参加するユーザーの一覧 */}
+                        <div>
+                            <ul>
+                                {user_list.icon.map((value, key) =>
+                                    <li
+                                        key={key}
+                                    >
+                                        <div className='flex flex-row space-x-6'>
+                                            <div>
+                                                <Image
+                                                    src={value}
+                                                    alt={user_list.name[key]}
+                                                    height={32}
+                                                    width={30}
+                                                />
+                                            </div>
+                                            <div>
+                                                {user_list.name[key]}
+                                            </div>
+                                        </div>
+                                    </li>
+                                )}
+                            </ul>
+                        </div>
                     </div>
 
                     {/* メンバーを確定し、次へ進む */}
