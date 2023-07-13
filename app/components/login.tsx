@@ -45,7 +45,7 @@ export default function Login(props: any) {
             <div>
                 {/* 押したらホーム画面に飛ばす */}
                 <button
-                    onClick={() => router.push('./app_body/kayak')}
+                    onClick={() => router.push('./app_body/diary')}
                     style={{
                         backgroundColor: 'rgba(221, 223, 228, 1)',
                         color: 'rgba(99, 123, 152, 1)', fontSize: '12px', fontFamily: 'Anek Gujarati',

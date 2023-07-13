@@ -17,30 +17,30 @@ export default function Menu_Icon(){
      //メニューバー一覧
      const menu = {
         //Imageのaltに使う
-        'name' : ['日誌','カヤック','プロフィール'],
+        'name' : ['ホーム','ビデオ','過去のデータ','プロフィール'],
 
         //画面遷移用(next_path)と現在のパスと比べる用(now_path)
         'link' : {
-            next_path:['/app_body/diary','/app_body/kayak','/app_body/profile'],
-            now_path:['diary','kayak','profile']
+            next_path:['/app_body/diary','/app_body/video','/app_body/timeline','/app_body/profile'],
+            now_path:['diary','video','timeline','profile']
         },
 
         //pngが通常時、png_onが開かれている画面の時のアイコン
-        'png' : ['/diary.png','/kayak.png','/profile.png'],
-        'png_on' : ['/diary_on.png','/kayak_on.png','/profile_on.png'],
+        'png' : ['/home.png','/video.png','/timeline.png','/profile.png'],
+        'png_on' : ['/home_on.png','/video_on.png','/timeline_on.png','/profile_on.png'],
 
         //アイコンのサイズ
         //[ 日誌 , カヤック , プロフィール ]
         'size': {
-            'height':[ 102, 100 , 102 ],
-            'width':[ 132, 100 , 132 ],
+            'height':[ 33, 30 , 33 , 37 ],
+            'width':[ 33, 30 , 33 , 37 ],
         }
     }
 
     return(
         <div>
 
-            <div className='fixed bottom-0 left-0 w-full h-[120px] bg-white flex justify-around'>
+            <div className='fixed bottom-0 left-0 w-full h-[57px] bg-backgray flex justify-around'>
             
             {/* メニューバーを表示 */}
             {menu.name.map(( value , key )=>
@@ -58,7 +58,7 @@ export default function Menu_Icon(){
                 //終了しますかの文字を表示
                 setNaviStop('yes')
                 :
-                ''
+                 ''
             }
             >
                 {/* tailwind cssの設定 */}
