@@ -46,10 +46,11 @@ export default function Today_Map(){
             {/* 写真を撮った位置を表示 */}
             {photo_list.photo.map(( value , key )=>
             <button
-            key = { key }
-            onClick = {()=>{
-                setPhotoOpen(key)
-            }}
+                title="撮った写真を確認する"
+                key = { key }
+                onClick = {()=>{
+                    setPhotoOpen(key)
+                }}
             >
 
                 <Image
@@ -80,6 +81,7 @@ export default function Today_Map(){
                 onClick = {()=>{
                     setPhotoOpen(-1)
                 }}
+
                 >
 
                     <DisabledByDefaultRoundedIcon />

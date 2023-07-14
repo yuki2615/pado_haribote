@@ -31,12 +31,12 @@ export default function Diary() {
         <div>
             {/* 航行中のユーザーの表示 */}
             <div className='relative'>
-                <ul className='flex flex-row justify-around absolute overflow-x-auto'>
+                <ul className='flex flex-row absolute'>
                     {Navigation_Group.map((group, key) =>
                         <li
                             key={key}
                         >
-                            <div className='flex flex-col p-2'>
+                            <div className='flex flex-col mt-4 mx-4'>
                                 <button
                                     onClick={() => {
 
@@ -58,16 +58,18 @@ export default function Diary() {
                                     }}
                                 >
                                     {/* アイコンの表示 */}
+                        
                                     <Image
                                         src={group.icon}
                                         alt={group.name}
                                         width={60}
                                         height={60}
+                                        style={{ objectFit: 'contain', objectPosition: 'center' }}
                                     />
                                 </button>
 
                                 {/* グループ名の表示 */}
-                                <div className='text-center text-[11px] text-border_line'>
+                                <div className='text-center text-[11px] text-border_line w-[60px] px-[2px]'>
                                     {group.name}
                                 </div>
                             </div>
@@ -80,7 +82,7 @@ export default function Diary() {
             </div>
 
             {/* フレンドのアルバムの表示 */}
-            <div>
+            <div className='overflow-y-auto h-[656px]'>
 
                 {Frend_Diary.map((diary, key) =>
                     //アルバム全体
