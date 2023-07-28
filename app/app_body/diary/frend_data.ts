@@ -43,7 +43,7 @@ export const Navigation_Group = [
     }
 ]
 
-export const Frend_Diary = [
+export const Friend_Diary = [
     /*フレンドネーム:{
         アイコン:text(publicファイルの写真),
         アルバム:[text(publicファイルの写真)]
