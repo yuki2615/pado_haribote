@@ -4,6 +4,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import Slider from 'react-slick'
 import { useRouter } from 'next/navigation'
 
 //☆のicon
@@ -13,12 +14,15 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
 //航行中のグループ(Navigation_Group)
 //アルバムを表示させるフレンド(Frend_Diary)
-import { Navigation_Group, Frend_Diary } from './frend_data'
+import { Navigation_Group, Friend_Diary } from './frend_data'
 
 //フォロ－中
 import { Follow } from '../../follow'
 //フォロワー
 import { Follower } from '../../follower'
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function Diary() {
 
@@ -26,6 +30,15 @@ export default function Diary() {
 
     //星が押されたか
     const [push_star, setPushStar] = useState([-1]);
+
+    // カルーセルの設定
+    const carouselSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
 
     return (
         <div>
@@ -58,7 +71,7 @@ export default function Diary() {
                                     }}
                                 >
                                     {/* アイコンの表示 */}
-                        
+
                                     <Image
                                         src={group.icon}
                                         alt={group.name}
@@ -84,7 +97,7 @@ export default function Diary() {
             {/* フレンドのアルバムの表示 */}
             <div className='overflow-y-auto h-[656px]'>
 
-                {Frend_Diary.map((diary, key) =>
+                {Friend_Diary.map((diary, key) =>
                     //アルバム全体
                     <div
                         key={key}>
@@ -135,15 +148,31 @@ export default function Diary() {
                                     </div>
                                 </div>
                                 <div className='w-80 border border-border_line'></div>
+
+                                <div>
+                                    {/* カルーセル */}
+                                    <Slider {...carouselSettings}>
+                                        {diary.album.map((image, index) => (
+                                        <div key={index}>
+                                         <Image 
+                                           src={image}
+                                           alt={diary.frendname}
+                                          width={65}
+                                          height={93}
+                                          />
+                                       </div>
+                                    ))}
+                                    </Slider>
                             </div>
-                            <div className='w-80 h-60 bg-backgray'></div>
                         </div>
+                        <div className='w-80 h-60 bg-backgray'></div>
+                    </div>
 
                     </div>
                 )}
 
-            </div>
         </div>
+        </div >
     )
 
 }
