@@ -16,7 +16,7 @@ export default function Friend_Map() {
     const router = useRouter()
     const params = useSearchParams()
 
-    const frend_user = params.get('friend_user')
+    const friend_user = params.get('friend_user')
 
     return (
         <div className='relative'>
@@ -36,7 +36,7 @@ export default function Friend_Map() {
             <button
                 title='kayak'
                 onClick={() => {
-                    router.push(`../../kayak/navi_folder/navi_viewing?frend_user=${frend_user}`)
+                    router.push(`../../kayak/navi_folder/navi_viewing?friend_user=${friend_user}`)
                 }}
             >
                 {/* カヤックのアイコン 現在地などデータベースからのやり取りが必要*/}
