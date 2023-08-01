@@ -40,8 +40,31 @@ export const Navigation_Group = [
             'Yamada1234',
             'user2'
         ]
+    },
+    {
+        'name':'funkayak',
+        'icon':'/red_F_icon.png',
+        'user':[
+            'Yamada1234',
+            'user2',
+            'user3',
+            'user4',
+            'user5',
+            'user6'
+        ]
+    },
+    {
+        'name':'paddles',
+        'icon':'/blue_K_icon.png',
+        'user':[
+            'Yamada1234',
+            'user2',
+            'user3'
+        ]
     }
 ]
+
+
 
 export const Friend_Diary = [
     /*フレンドネーム:{

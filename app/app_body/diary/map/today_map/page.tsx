@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 //写真を閉じるときに使うicon
 import DisabledByDefaultRoundedIcon from '@mui/icons-material/DisabledByDefaultRounded';
+import { title } from 'process';
 
 export default function Today_Map(){
 
@@ -78,7 +79,9 @@ export default function Today_Map(){
                 />
 
                 <button
+                title='kayakphoto'
                 onClick = {()=>{
+                
                     setPhotoOpen(-1)
                 }}
 

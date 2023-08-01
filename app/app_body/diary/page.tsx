@@ -34,13 +34,10 @@ export default function Diary() {
     return (
         <div>
             {/* 航行中のユーザーの表示 */}
-            <div className='relative'>
-                <ul className='flex flex-row absolute'>
+
+                <div className='flex flex-row overflow-x-auto bg-backgray pb-4'>
                     {Navigation_Group.map((group, key) =>
-                        <li
-                            key={key}
-                        >
-                            <div className='flex flex-col mt-4 mx-4'>
+                            <div className='flex flex-col  items-center mt-4 mx-4 ' key={key}>
                                 <button
                                     onClick={() => {
 
@@ -77,16 +74,13 @@ export default function Diary() {
                                     {group.name}
                                 </div>
                             </div>
-                        </li>
 
                     )}
 
-                </ul>
-                <div className='w-full h-24 bg-backgray'></div>
-            </div>
+                </div>
 
             {/* フレンドのアルバムの表示 */}
-            <div className='overflow-x-hidden overflow-y-auto h-[656px]'>
+            <div className='overflow-x-hidden overflow-y-auto h-[580px]'>
                 <ul>
                     {Friend_Diary.map((diary, key) =>
                         //アルバム全体
@@ -140,7 +134,7 @@ export default function Diary() {
                                     </div>
                                     <div className='w-80 border border-border_line font-extrabold'></div>
 
-                                    <div className='mx-5 my-4 overflow-hidden' style={{ maxWidth: '275px' }}>
+                                    <div className='mx-5 my-4 overflow-hidden h-[156px]' style={{ maxWidth: '275px' }}>
                                     {/* react-slickカルーセルを使用 */}
                                     <Slider
                                         infinite={false}
