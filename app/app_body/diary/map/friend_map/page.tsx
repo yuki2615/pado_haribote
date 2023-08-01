@@ -11,12 +11,12 @@ import { useRouter, useSearchParams } from 'next/navigation'
 //バックボタン
 import Back_button from '../../../components/back_button'
 
-export default function Frend_Map() {
+export default function Friend_Map() {
 
     const router = useRouter()
     const params = useSearchParams()
 
-    const frend_user = params.get('frend_user')
+    const frend_user = params.get('friend_user')
 
     return (
         <div className='relative'>

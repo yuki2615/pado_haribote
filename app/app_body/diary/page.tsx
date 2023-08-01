@@ -55,7 +55,7 @@ export default function Diary() {
                                         }
 
                                         //観覧に飛ぶ
-                                        router.push(`./diary/map/frend_map?frend_user=${display_user}`)
+                                        router.push(`./diary/map/friend_map?friend_user=${display_user}`)
                                     }}
                                 >
                                     {/* アイコンの表示 */}
