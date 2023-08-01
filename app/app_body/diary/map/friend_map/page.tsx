@@ -26,7 +26,7 @@ export default function Friend_Map() {
                 {/* google mapから仮で読み込み */}
                 <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d100033.9820597696!2d136.7188807!3d34.4828905!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sja!2sjp!4v1690899952528!5m2!1sja!2sjp" 
                         width="600" height="450"
-                        style={{ border: '0' }}  
+                        style={{ border: '0' , pointerEvents: 'none'}}  
                         loading="lazy" 
                         className='w-[390px] h-[695px]'
                         >
@@ -38,6 +38,7 @@ export default function Friend_Map() {
                 onClick={() => {
                     router.push(`../../kayak/navi_folder/navi_viewing?friend_user=${friend_user}`)
                 }}
+                style={{ pointerEvents: 'auto'}} // ボタンのクリックイベントを有効にする
             >
                 {/* カヤックのアイコン 現在地などデータベースからのやり取りが必要*/}
                 <Image
@@ -45,7 +46,7 @@ export default function Friend_Map() {
                     alt='カヤックのアイコン'
                     width={40}
                     height={40}
-                    className='absolute top-44 mx-10'
+                    className='top-[300px] mx-10 absolute'
                 />
             </button>
 

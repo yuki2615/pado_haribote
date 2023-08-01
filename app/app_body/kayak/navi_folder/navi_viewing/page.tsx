@@ -8,7 +8,7 @@ export default function Navi_Viewing(){
 
     const params = useSearchParams()
 
-    const frend = params.get('frend_user')
+    const frend = params.get('friend_user')
 
     return(
         <div>
