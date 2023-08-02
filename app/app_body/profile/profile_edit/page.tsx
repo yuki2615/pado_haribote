@@ -46,7 +46,7 @@ export default function Profile_Edit() {
         },
         {
             'mail': 'Yamada_bro@gmail.com',
-            'icon': '/brother_icon.png'
+            'icon': '/bro_purple.png'
         }
     ]
 

@@ -9,6 +9,7 @@ export default function Login(props: any) {
 
     const router = useRouter()
 
+
     //ログイン時必要な情報
     const info = [
         'メールアドレスを入力してください',
@@ -19,7 +20,7 @@ export default function Login(props: any) {
         <div>
 
             {/* アカウントの情報を入力 */}
-            <div className='mt-10'>
+            <div className='mt-10 flex flex-col space-y-4'>
 
                 {/* 入力部分 */}
                 {info.map((value, key) =>
@@ -29,10 +30,10 @@ export default function Login(props: any) {
                     >
 
                         <input
-                            className='w-[274px] h-[30px] border rounded-md text-backgray text-center my-2'
+                            className='w-[274px] h-[43px] border border-backgray placeholder-backgray rounded-md text-backgray text-center my-2'
                             type='text'
                             placeholder={value}
-                            style={{ borderColor: 'rgba(221, 223, 228, 1)', backgroundColor: 'transparent'}}
+                            style={{ backgroundColor: 'transparent' }}
                         />
 
                     </div>
@@ -41,37 +42,30 @@ export default function Login(props: any) {
 
             </div>
 
-            {/* ログインボタン */}
-            <div>
-                {/* 押したらホーム画面に飛ばす */}
-                <button
-                    onClick={() => router.push('./app_body/diary')}
-                    style={{
-                        backgroundColor: 'rgba(221, 223, 228, 1)',
-                        color: 'rgba(99, 123, 152, 1)', fontSize: '12px', fontFamily: 'Anek Gujarati',
-                        width: '123px', height: '30px', borderRadius: '5px',
-                        margin: '26%'
-                    }}
-                    className='font-extrabold w-full'
-                >
-                    ログイン
-                </button>
-            </div>
 
-            {/* 新規アカウント作成ボタン */}
-            <div>
-                <button
-                    onClick={props.to_signup}
-                    style={{
-                        backgroundColor: 'rgba(221, 223, 228, 1)',
-                        color: 'rgba(99, 123, 152, 1)', fontSize: '12px', fontFamily: 'Anek Gujarati',
-                        width: '177px', height: '30px', borderRadius: '5px',
-                        margin: '17%'
-                    }}
-                    className='font-extrabold w-full '
-                >
-                    新規アカウント作成
-                </button>
+            <div className='flex flex-col items-center my-20 space-y-20'>
+                {/* ログインボタン */}
+                <div>
+                    {/* 押したらホーム画面に飛ばす */}
+                    <button
+                        onClick={() => router.push('./app_body/diary')}
+
+                        className='font-extrabold w-[120px] h-[40px] rounded text-border_line bg-backgray text-[12px]'
+                    >
+                        ログイン
+                    </button>
+                </div>
+
+                {/* 新規アカウント作成ボタン */}
+                <div>
+                    <button
+                        onClick={props.to_signup}
+
+                        className='font-extrabold w-[177px] h-[40px] rounded text-border_line bg-backgray text-[12px]'
+                    >
+                        新規アカウント作成
+                    </button>
+                </div>
             </div>
 
         </div>

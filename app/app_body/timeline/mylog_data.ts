@@ -1,0 +1,38 @@
+export const mylog_Diary = [
+    /*  日付:{
+        アルバム:[text(publicファイルの写真)]
+    }
+    */
+    {
+        'date':'2023-05-22',
+        'album':[
+            '/kayak_picture1.png',
+            '/kayak_picture2.png',
+            '/front_camera.png'
+        ]
+    },
+    {
+        'date':'2022-10-25',
+        'album':[
+            '/kayak_picture1.png',
+            '/kayak_picture2.png',
+            '/front_camera.png'
+        ]
+    },
+    {
+        'date':'2022-07-24',
+        'album':[
+            '/kayak_picture1.png',
+            '/kayak_picture2.png',
+            '/front_camera.png'
+        ]
+    },
+    {
+        'date':'2022-06-23',
+        'album':[
+            '/kayak_picture1.png',
+            '/kayak_picture2.png',
+            '/front_camera.png'
+        ]
+    },
+]

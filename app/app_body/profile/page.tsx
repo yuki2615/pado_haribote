@@ -47,13 +47,13 @@ export default function Profile() {
 
     const dates = ['2023-05-22', '2022-10-25', '2022-07-24', '2021-08-08']
     const className = 'ml-9 mt-1.5 Rectangle86 w-[157px] rounded border text-center border-border_line text-border_line text-[11px] font-semibold'
-    const GroupName = ['HappyKayaks', 'Kayaklove', 'Kayak3150']
+    const GroupName = ['HappyKayaks', 'Kayaklove', 'Kayak3150','kayak1','kayak2','kayak3']
 
 
     const elements = dates.map((date, index) => (
-        <div key={index}>
+        <button key={index} onClick={()=>{router.push('/app_body/diary/map/today_map')}}>
             <div className={className}>{date}の航行</div>
-        </div>
+        </button>
     ))
     return (
         <div>
@@ -112,7 +112,7 @@ export default function Profile() {
             </div>
             <div className="mt-5 w-full border text-backgray"></div>
             {/* 過去の航行を表示 */}
-            <div className='overflow-y-auto h-full ...'>
+            <div className='overflow-y-scroll h-[505px]'>
                 <div className='mt-4 ml-4 text-backgray font-AnekGujarati text-[15px] font-extrabold'>
                     過去の航行
                 </div>
@@ -133,11 +133,12 @@ export default function Profile() {
                                 {isShowContents.includes(index) && (
                                     <div className='ml-4 w-[340px] h-[78px] bg-backgray rounded-b relative overflow-hidden'>
                                         <div className='flex flex-row'>
-                                            <div className='ml-3 mt-1.5 text-center w-[93px] h-[65px] border'>
+                                            <button className='ml-3 mt-1.5 text-center w-[93px] h-[65px] border'
+                                                    onClick={()=>{router.push('/app_body/timeline')}}>
                                                 <p>写真</p>
-                                            </div>
+                                            </button>
                                             <div className='overflow-y-auto h-[78px]'>
-                                                <div className='flex flex-col mb-1.5'>
+                                                <div className='flex flex-col mb-1.5' >
                                                     {elements}
                                                 </div>
                                             </div>
