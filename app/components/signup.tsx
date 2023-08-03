@@ -8,7 +8,7 @@ export default function Signup(props: any) {
 
     const router = useRouter()
 
-    const className = 'pt-2 w-[67px] h-[40px] bg-backgray text-border_line text-center font-bold rounded-md'
+    const className = 'pt-2 w-[67px] h-[40px] bg-backgray text-border_line text-center font-bold rounded'
 
     //アカウント登録時必要な情報
     const info = [
