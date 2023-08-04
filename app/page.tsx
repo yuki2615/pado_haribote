@@ -19,25 +19,25 @@ export default function Index() {
   })
 
   return (
-    <div>
+    <div className='flex flex-col'>
 
       {/* タイトル表示部分 */}
       
-        <div className='w-full h-1/4 bg-backgray top-[0px] absolute'>
+        <div className='w-full h-screen/4 bg-backgray '>
         {/* タイトルを挿入 */} 
         <Image
           src="/pado_title.png"
           alt="ぱどろーる"
           width={250}
           height={250}
-          className='w-full h-[138px]  flex justify-center my-10 absolute object-cover'
+          className='w-full h-full object-contain py-3'
           />
         </div>
 
       
 
       {/* ログイン入力部分 */}
-      <div className='flex justify-center'>
+      <div className='flex justify-center w-full h-3/4'>
 
         {/* ログインと新規登録で分ける */}
         {switching.login_signup == 'login' ?
