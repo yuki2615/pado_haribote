@@ -22,18 +22,19 @@ export default function Index() {
     <div>
 
       {/* タイトル表示部分 */}
-      <div className='w-full h-64 relative'>
-        <div className='w-full h-64 top-[0px] absolute' style={{ backgroundColor: 'rgba(221, 223, 228, 1)', }}></div>
-        {/* タイトルを挿入 */}
+      
+        <div className='w-full h-1/4 bg-backgray top-[0px] absolute'>
+        {/* タイトルを挿入 */} 
         <Image
           src="/pado_title.png"
           alt="ぱどろーる"
           width={250}
           height={250}
-          className='w-full h-[138px]  flex justify-center top-[101px] absolute'
-        />
+          className='w-full h-[138px]  flex justify-center my-10 absolute object-cover'
+          />
+        </div>
 
-      </div>
+      
 
       {/* ログイン入力部分 */}
       <div className='flex justify-center'>
